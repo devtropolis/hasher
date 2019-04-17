@@ -10,6 +10,7 @@ namespace Devtropolis\Hasher\Tests;
 
 
 use Devtropolis\Hasher\BaseClass;
+use Devtropolis\Hasher\Facades\Hashed;
 use Devtropolis\Hasher\Hasher\Hasher;
 
 class HasherDecodeTest extends BaseClass
@@ -20,7 +21,10 @@ class HasherDecodeTest extends BaseClass
 
         $test_id = $hashids->encode(1);
 
-        $id = Hasher::decode('test', $test_id);
+        $id = Hashed::decode('test', $test_id);
+
+
+
 
         $this->assertEquals(1 , $id);
     }
