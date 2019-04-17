@@ -22,7 +22,7 @@ class HasherServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind('hashed', function () {
+        $this->app->bind('hasher', function () {
             return new Hasher();
         });
     }
