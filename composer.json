@@ -34,7 +34,7 @@
                 "Devtropolis\\Hasher\\HasherServiceProvider"
             ],
             "aliases" : {
-                "Hashed": "Devtropolis\\Hasher\\Facades\\Hashed"
+                "Hasher": "Devtropolis\\Hasher\\Facades\\Hasher"
             }
         }
     }

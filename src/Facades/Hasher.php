@@ -11,10 +11,10 @@ namespace Devtropolis\Hasher\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Hashed extends Facade
+class Hasher extends Facade
 {
     protected static function getFacadeAccessor() {
-        return 'hashed';
+        return 'hasher';
     }
 
 }

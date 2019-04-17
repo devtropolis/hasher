@@ -10,7 +10,7 @@ namespace Devtropolis\Hasher\Tests;
 
 
 use Devtropolis\Hasher\BaseClass;
-use Devtropolis\Hasher\Facades\Hashed;
+use Devtropolis\Hasher\Facades\Hasher;
 use Devtropolis\Hasher\Hasher\Hasher;
 
 class HasherErrorDecodeTest extends BaseClass
@@ -18,7 +18,7 @@ class HasherErrorDecodeTest extends BaseClass
 
     public function test_error_is_thrown() {
         $this->expectException('Symfony\Component\HttpKernel\Exception\HttpException');
-        Hashed::decode('dsdssdw223', 'ds2eds');
+        Hasher::decode('dsdssdw223', 'ds2eds');
     }
 
 }

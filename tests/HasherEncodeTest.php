@@ -10,7 +10,7 @@ namespace Devtropolis\Hasher\Tests;
 
 
 use Devtropolis\Hasher\BaseClass;
-use Devtropolis\Hasher\Facades\Hashed;
+use Devtropolis\Hasher\Facades\Hasher;
 use Devtropolis\Hasher\Hasher\Hasher;
 
 class HasherEncodeTest extends BaseClass
@@ -22,7 +22,7 @@ class HasherEncodeTest extends BaseClass
 
         $test_id = $hashids->encode(1);
 
-        $hashed_id = Hashed::encode('test', 1);
+        $hashed_id = Hasher::encode('test', 1);
 
         $this->assertEquals($test_id, $hashed_id);
     }
