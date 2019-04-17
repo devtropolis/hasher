@@ -9,7 +9,7 @@
 namespace Devtropolis\Hasher;
 
 
-use Devtropolis\Hasher\Hasher\Hasher;
+use Devtropolis\Hasher\hasher\Hasher;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
