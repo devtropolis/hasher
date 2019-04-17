@@ -1,0 +1,40 @@
+{
+    "name": "devtropolis/hasher",
+    "description": "Creates an alisas for hashing",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamie Woods",
+            "email": "40759491+jamiewood678@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "hashids/hashids": "^4.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Devtropolis\\Hasher\\" : "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4" : {
+            "Devtropolis\\Hasher\\Tests\\" : "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1",
+        "orchestra/testbench": "^3.5"
+    },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "Devtropolis\\Hasher\\HasherServiceProvider"
+            ],
+            "aliases" : {
+                "Hasher": "Devtropolis\\Hasher\\Facades\\Hasher"
+            }
+        }
+    }
+}
