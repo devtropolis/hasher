@@ -11,7 +11,6 @@ namespace Devtropolis\Hasher\Tests;
 
 use Devtropolis\Hasher\BaseClass;
 use Devtropolis\Hasher\Facades\Hasher;
-use Devtropolis\Hasher\Hasher\Hasher;
 
 class HasherDecodeTest extends BaseClass
 {
