@@ -33,10 +33,6 @@ jobs:
           command: npm install
 
     - run:
-          name: npm run dev
-          command: npm run dev
-
-    - run:
           name: Unit Tests
           command: ./vendor/bin/phpunit -d memory_limit=512M
 
