@@ -25,10 +25,6 @@ jobs:
         command: composer install --no-progress --no-suggest
 
     - run:
-        name: Migrate Sqlite Database
-        command: php artisan migrate
-
-    - run:
           name: npm rebulid node-sass
           command: npm rebuild node-sass
 
