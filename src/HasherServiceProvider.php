@@ -9,6 +9,8 @@
 namespace Devtropolis\Hasher;
 
 
+use Devtropolis\Hasher\Hasher\Hasher;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
 class HasherServiceProvider extends ServiceProvider
@@ -18,9 +20,10 @@ class HasherServiceProvider extends ServiceProvider
 
     }
 
-    public function register() {
-        $this->app->bind('hasher', function() {
-            return new Hasher\Hasher();
+    public function register()
+    {
+        $this->app->bind('hashed', function () {
+            return new Hasher();
         });
     }
 }
