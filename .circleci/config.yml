@@ -1,0 +1,60 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/laravel
+    docker:
+      - image: devtropolis/laravelcircleci:latest
+      - image: circleci/mysql:5.7.18
+        environment:
+          MYSQL_DATABASE: homestead_test
+          MYSQL_USER: homestead_test
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: root
+
+
+    steps:
+    - checkout
+
+    - run:
+       name: Setting up circleci testing env
+       command: cp .circleci/configs/.env.testing.circleci .env
+
+    - run:
+        name: Install Composer Dependencies
+        command: composer install --no-progress --no-suggest
+
+    - run:
+        name: Migrate Sqlite Database
+        command: php artisan migrate
+
+    - run:
+          name: npm rebulid node-sass
+          command: npm rebuild node-sass
+
+    - run:
+          name: npm install
+          command: npm install
+
+    - run:
+          name: npm run dev
+          command: npm run dev
+
+    - run:
+          name: Unit Tests
+          command: ./vendor/bin/phpunit -d memory_limit=512M
+
+
+    - store_test_results:
+        path: multiple-results
+
+
+
+    - store_artifacts:
+        path: storage/logs
+
+workflows:
+  version: 2
+  notify_deploy:
+    jobs:
+      - build
