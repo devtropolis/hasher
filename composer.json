@@ -3,6 +3,7 @@
     "description": "Creates an alisas for hashing",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Jamie Woods",
