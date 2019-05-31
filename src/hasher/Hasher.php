@@ -19,14 +19,10 @@ class Hasher
     public static function decode($salt, $enc)
     {
 
-        if (is_int($enc)) {
-            return $enc;
-        }
-
         $hashids = new \Hashids\Hashids($salt, 10);
 
         if (!$hashids->decode($enc)) {
-            abort(500);
+            abort(404);
         }
 
         $id = $hashids->decode($enc)[0];
