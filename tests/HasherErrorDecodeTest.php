@@ -20,4 +20,9 @@ class HasherErrorDecodeTest extends BaseClass
         Hasher::decode('dsdssdw223', 'ds2eds');
     }
 
+    public function test_error_if_decoding_int() {
+        $this->expectException('Symfony\Component\HttpKernel\Exception\HttpException');
+        Hasher::decode('dsdssdw223', 1);
+    }
+
 }
